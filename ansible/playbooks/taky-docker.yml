@@ -1,5 +1,6 @@
 ---
 - name: Pull Taky image
   community.docker.docker_image:
-    name: ubuntu
+    name: skadakar/taky
     source: pull
+    
