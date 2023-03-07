@@ -3,8 +3,6 @@
   docker_image:
     name: skadakar/taky
     source: pull
-    pull:
-      platform: amd64
 
 - name: Start Taky-Data
   docker_compose:
