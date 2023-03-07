@@ -11,6 +11,9 @@
       - python3-setuptools
     state: latest
     update_cache: true
+    until: apt_status is success
+    delay: 10
+    retries: 12
 
 - name: Add Docker GPG apt Key
   apt_key:
