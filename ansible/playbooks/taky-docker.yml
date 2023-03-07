@@ -3,3 +3,44 @@
   docker_image:
     name: skadakar/taky
     source: pull
+    pull:
+      platform: amd64
+
+- name: Start Taky-Data
+  docker_compose:
+    services:
+      taky-cot:
+        image: skadakar/taky:latest
+        container_name: taky-cot
+        user: root
+        ports:
+          - 8089:8089
+        restart: unless-stopped
+        environment:
+          - ssl_enabled=true
+          - client_cert_required=true
+          - mode=cot
+          - bind_ip=0.0.0.0
+          - public_ip=green.airsoftsweden.com
+          - hostname=Public-Green
+          - redis=false
+        volumes:
+          - /docker/data/taky-data:/data
+        
+      taky-data:
+        image: skadakar/taky:latest
+        container_name: taky-data
+        user: root
+        ports:
+          - 8443:8443
+        restart: unless-stopped
+        environment:
+          - ssl_enabled=true
+          - mode=data
+          - bind_ip=0.0.0.0
+          - public_ip=green.airsoftsweden.com
+          - hostname=Public-Green
+        volumes:
+          - /docker/data/taky-data:/data
+        depends_on:
+          - taky-cot
