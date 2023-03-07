@@ -10,10 +10,10 @@ services:
       - ssl_enabled=true
       - client_cert_required=true
       - mode=cot
-      - bind_ip=${BIND_IP}
+      - bind_ip=0.0.0.0
       - public_ip=${IP}
       - hostname=${ID}
-      - redis=${REDIS}
+      - redis=false
     volumes:
       - /docker/data/taky-data:/data
     
@@ -27,7 +27,7 @@ services:
     environment:
       - ssl_enabled=true
       - mode=data
-      - bind_ip=${BIND_IP}
+      - bind_ip=0.0.0.0
       - public_ip=${IP}
       - hostname=${ID}
     volumes:
