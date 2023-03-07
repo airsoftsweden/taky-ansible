@@ -4,7 +4,7 @@
     name: skadakar/taky:latest
     source: pull
 
-- name: Start Taky-Data
+- name: Docker Compose Up Taky
   docker_compose:
     project_src: docker/
     files: 
