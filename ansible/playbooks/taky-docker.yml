@@ -1,5 +1,5 @@
 ---
-- name: Docker pull skadakar/taky
+- name: Pull Taky image
   community.docker.docker_image:
-    name: "skadakar/taky:latest"
+    name: skadakar/taky:latest
     source: pull
