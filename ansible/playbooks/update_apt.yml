@@ -17,7 +17,7 @@
     path: "/var/lib/dpkg/lock-frontend"
 
 - name: Update all
-  file:
+  apt:
     name: "*"
     state: latest
     lock_timeout: 180
