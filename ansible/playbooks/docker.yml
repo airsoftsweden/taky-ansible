@@ -11,7 +11,7 @@
       - python3-setuptools
     state: latest
     update_cache: true
-    lock_timeout: 120
+    lock_timeout: 180
 
 - name: Add Docker GPG apt Key
   apt_key:

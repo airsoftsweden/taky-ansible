@@ -15,3 +15,9 @@
   file: 
     state: absent
     path: "/var/lib/dpkg/lock-frontend"
+
+- name: Update all
+  file:
+    name: "*"
+    state: latest
+    lock_timeout: 180
