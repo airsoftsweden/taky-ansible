@@ -13,7 +13,8 @@ services:
       - bind_ip=0.0.0.0
       - public_ip=${IP}
       - hostname=${ID}
-      - redis=false
+      - ca_key=${CA_KEY}
+      - key_pw=${KEY_PW}
     volumes:
       - /docker/data/taky-data:/data
     
@@ -30,6 +31,8 @@ services:
       - bind_ip=0.0.0.0
       - public_ip=${IP}
       - hostname=${ID}
+      - ca_key=${CA_KEY}
+      - key_pw=${KEY_PW}
     volumes:
       - /docker/data/taky-data:/data
     depends_on:
