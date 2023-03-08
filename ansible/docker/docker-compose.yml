@@ -13,7 +13,6 @@ services:
       - bind_ip=0.0.0.0
       - public_ip=${IP}
       - hostname=${ID}
-      - ca_key=${CA_KEY}
       - key_pw=${KEY_PW}
       - server_p12_pw=${SERVER_P12_PW}
     volumes:
@@ -32,7 +31,6 @@ services:
       - bind_ip=0.0.0.0
       - public_ip=${IP}
       - hostname=${ID}
-      - ca_key=${CA_KEY}
       - key_pw=${KEY_PW}
       - server_p12_pw=${SERVER_P12_PW}
     volumes:
