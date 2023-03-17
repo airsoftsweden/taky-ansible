@@ -1,0 +1,15 @@
+version: "3"
+services:
+  taky-sidecar:
+    container_name: taky-sidecar
+    image: skadakar/taky-rtsp-sidecar:latest
+    ports:
+      - "1880:1880"
+    environment:
+      - COT_IP=127.0.0.1
+      - COT_PORT=8089
+    volumes:
+      - /docker/data/taky-data/ssl/ca.crt:/data/certs/ca.pem:ro
+      - /docker/data/taky-data/ssl/server.crt:/data/certs/server.pem:ro
+      - /docker/data/taky-data/ssl/server.key:/data/certs/server.key:ro
+    restart: unless-stopped
