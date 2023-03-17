@@ -15,6 +15,7 @@ services:
       - hostname=${ID}
       - key_pw=${KEY_PW}
       - server_p12_pw=${SERVER_P12_PW}
+      - max_persist_ttl=60  
     volumes:
       - /docker/data/taky-data:/data
     
