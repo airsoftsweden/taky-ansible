@@ -1,0 +1,11 @@
+---
+- name: Pull sidecar image
+  docker_image:
+    name: skadakar/taky-rtsp-sidecar:latest
+    source: pull
+
+- name: Docker Compose Up Taky
+  docker_compose:
+    project_src: docker/
+    files: 
+      - docker-compose-services.yml
