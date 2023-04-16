@@ -1,15 +1,28 @@
 version: "3"
 services:
-  taky-sidecar:
-    container_name: taky-sidecar
-    image: skadakar/taky-rtsp-sidecar:latest
+  taky-rtsp:
+    container_name: taky-rtsp
+    image: aler9/rtsp-simple-server
     ports:
-      - "1880:1880"
+      - 1935:1935
+      - 8554:8554
+      - 8888:8888
+      - 9997:9997
     environment:
-      - COT_IP=127.0.0.1
-      - COT_PORT=8089
+      - RTSP_PROTOCOLS=tcp
     volumes:
-      - /docker/data/taky-data/ssl/ca.crt:/data/certs/ca.pem:ro
-      - /docker/data/taky-data/ssl/server.crt:/data/certs/server.pem:ro
-      - /docker/data/taky-data/ssl/server.key:/data/certs/server.key:ro
+      - /docker/data/taky-rtsp/rtsp-simple-server.yml:/rtsp-simple-server.yml:ro
     restart: unless-stopped
+
+  taky-bordercar:
+    container_name: taky-bordercar
+    image: securitybits/taky-bordercar
+    environment:
+      - STREAM_URL=${IP}
+      - CERT_PASS=${KEY_PW}
+      - IP=${IP}
+    volumes:
+      - /docker/data/taky-data:/data
+    restart: unless-stopped
+    depends_on:
+      - taky-rtsp

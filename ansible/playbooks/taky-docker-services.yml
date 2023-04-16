@@ -1,7 +1,24 @@
 ---
-- name: Pull sidecar image
+- name: Create RTSP Folder
+  file:
+    path: /docker/data/taky-rtsp
+    state: directory
+    mode: '0755'
+
+- name: Move RTSP config to taky-rtsp
+  copy:
+    src: /opt/ansible/config/rtsp-simple-server.yml
+    dest: /docker/data/taky-rtsp/rtsp-simple-server.yml
+    mode: '0777'
+
+- name: Pull rtsp image
   docker_image:
-    name: skadakar/taky-rtsp-sidecar:latest
+    name: aler9/rtsp-simple-server:latest
+    source: pull
+
+- name: Pull bordercar image
+  docker_image:
+    name: securitybits/taky-bordercar:latest
     source: pull
 
 - name: Docker Compose Up Taky
