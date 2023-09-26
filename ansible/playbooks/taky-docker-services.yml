@@ -7,7 +7,7 @@
 
 - name: Move RTSP config to taky-rtsp
   copy:
-    src: /opt/ansible/config/rtsp-simple-server.yml
+    src: /opt/taky-ansible/ansible/config/rtsp-simple-server.yml
     dest: /docker/data/taky-rtsp/rtsp-simple-server.yml
     mode: '0777'
 
