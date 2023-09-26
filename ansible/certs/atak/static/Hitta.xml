@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customMapSource>
+    <name>03 Hitta.se - Outdoor</name>
+    <minZoom>0</minZoom>
+    <maxZoom>21</maxZoom>
+    <tileType>png</tileType>
+    <invertYCoordinate>true</invertYCoordinate>
+    <url>http://{$serverpart}.hitta.se/tile/v3/4/{$z}/{$x}/{$y}</url>
+    <serverParts>static</serverParts>
+    <backgroundColor>#00000000</backgroundColor>
+</customMapSource>

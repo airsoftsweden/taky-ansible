@@ -9,18 +9,3 @@
     project_src: docker/
     files: 
       - docker-compose.yml
-
-- name: Crontab - Restart Taky-CoT
-  cron:
-    name: Restart Taky-CoT
-    user: root
-    hour: 6
-    job: "docker restart taky-cot"
-
-
-- name: Crontab - Restart Taky-Data
-  cron:
-    name: Restart Taky-Data
-    user: root
-    hour: 6
-    job: "docker restart taky-data"

@@ -5,17 +5,19 @@ services:
     user: root
     ports:
       - 8089:8089
+      - 1337:1337
     restart: unless-stopped
     environment:
       - ssl_enabled=true
       - client_cert_required=true
       - mode=cot
+      - mon_port=1337
       - bind_ip=0.0.0.0
       - public_ip=${IP}
       - hostname=${ID}
       - key_pw=${KEY_PW}
       - server_p12_pw=${SERVER_P12_PW}
-      - max_persist_ttl=60  
+      - max_persist_ttl=60
     volumes:
       - /docker/data/taky-data:/data
     
