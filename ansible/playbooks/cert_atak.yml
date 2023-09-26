@@ -39,7 +39,7 @@
 
 - name: ATAK Cert - Add static files
   copy:
-    src: /opt/ansible/certs/atak/static/
+    src: /opt/taky-ansible/ansible/certs/atak/static/
     dest: /opt/certs/atak/certs/
 
 - name: MANIFEST.xml - Set Server Name
