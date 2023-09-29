@@ -9,7 +9,7 @@ services:
       - 64738:64738/udp
     environment:
       - MUMBLE_CONFIG_REGISTERNAME=Battalion Network
-      - MUMBLE_CONFIG_PASSWORD=${MUMBLE_CONFIG_PASSWORD}
+      - MUMBLE_CONFIG_SERVERPASSWORD=${MUMBLE_CONFIG_PASSWORD}
       - MUMBLE_CONFIG_SSLCERT=/config/fullchain.pem
       - MUMBLE_CONFIG_SSLKEY=/config/privkey.pem
     volumes:
