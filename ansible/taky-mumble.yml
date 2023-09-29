@@ -4,3 +4,4 @@
 
     tasks:
       - import_tasks: playbooks/taky-mumble-certbot.yml
+      - import_tasks: playbooks/taky-mumble-docker.yml
