@@ -7,7 +7,7 @@
 
 - name: Move Certs config to taky-mumble
   copy:
-    src: /etc/letsencrypt/live/{{ lookup('ansible.builtin.env', 'IP') }}'/{{ item }}
+    src: /etc/letsencrypt/live/{{ lookup('ansible.builtin.env', 'IP') }}/{{ item }}
     dest: /docker/data/taky-mumble/{{ item }}
     mode: '0777'
   with_items:
