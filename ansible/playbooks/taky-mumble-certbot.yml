@@ -1,0 +1,8 @@
+---
+- name: Install Certbot via Pip
+  pip:
+    name: certbot
+
+- name: Issue or Renew Certificate
+  command:
+    cmd: certbot certonly -n --standalone --agree-tos -d '{{ lookup('ansible.builtin.env', 'IP') }}' -m '{{ lookup('ansible.builtin.env', 'EMAIL') }}'
