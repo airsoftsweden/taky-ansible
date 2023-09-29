@@ -1,7 +1,8 @@
 ---
-- name: Install Certbot via Pip
-  pip:
-    name: certbot
+- name: Install Certbot via Snap
+  snap:
+    name:
+      - certbot
 
 - name: Issue or Renew Certificate
   command:
