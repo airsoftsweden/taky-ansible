@@ -1,5 +1,5 @@
 ---
-- name: Move letsencrypt certs to /opt/mumble/certs
+- name: Create taky-mumble folder
   file:
     path: /docker/data/taky-mumble
     state: directory
