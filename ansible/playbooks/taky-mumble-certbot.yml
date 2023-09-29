@@ -3,6 +3,7 @@
   snap:
     name:
       - certbot
+    classic: true
 
 - name: Issue or Renew Certificate
   command:
