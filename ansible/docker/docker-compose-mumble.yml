@@ -1,0 +1,16 @@
+services:
+  mumble-server:
+    image: mumblevoip/mumble-server
+    container_name: mumble-server
+    hostname: mumble-server
+    restart: on-failure
+    ports:
+      - 64738:64738
+      - 64738:64738/udp
+    environment:
+      - MUMBLE_CONFIG_REGISTERNAME=Battalion Network
+      - MUMBLE_CONFIG_PASSWORD=${MUMBLE_CONFIG_PASSWORD}
+      - MUMBLE_CONFIG_SSLCERT=/config/fullchain.pem
+      - MUMBLE_CONFIG_SSLKEY=/config/privkey.pem
+    volumes:
+      - /docker/data/taky-mumble:/config

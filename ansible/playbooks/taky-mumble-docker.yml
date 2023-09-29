@@ -13,3 +13,14 @@
   with_items:
     - fullchain.pem
     - privkey.pem
+
+- name: Pull Mumble image
+  docker_image:
+    name: mumblevoip/mumble-server:latest
+    source: pull
+
+- name: Docker Compose Up Mumble
+  docker_compose:
+    project_src: docker/
+    files: 
+      - docker-compose-mumble.yml
