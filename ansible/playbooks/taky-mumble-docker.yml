@@ -20,7 +20,7 @@
     source: pull
 
 - name: Docker Compose Up Mumble
-  docker_compose:
+  community.docker.docker_compose_v2:
     project_src: docker/
     files: 
       - docker-compose-mumble.yml
