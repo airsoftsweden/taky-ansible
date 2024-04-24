@@ -11,7 +11,7 @@
 
 - name: Install lxml module
   pip:
-    name: lxml
+    name: lxml==4.9.1
 
 - name: ITAK Cert generation through Docker-Exec
   community.docker.docker_container_exec:
