@@ -5,4 +5,3 @@
     tasks:
       - import_tasks: playbooks/cert_atak.yml
       - import_tasks: playbooks/cert_itak.yml
-      - import_tasks: playbooks/cert_upload.yml
