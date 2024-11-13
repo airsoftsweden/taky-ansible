@@ -1,16 +1,5 @@
 version: "3"
 services:
-  # taky-bot:
-  #   image: securitybits/taky-telegram
-  #   container_name: taky-bot
-  #   restart: unless-stopped
-  #   environment:
-  #     - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
-  #     - CERT_PASS=${KEY_PW}
-  #     - IP=${IP}
-  #   volumes:
-  #     - /docker/data/taky-data:/data
-
   taky-map:
     container_name: taky-map
     image: skadakar/taky-worldmap
